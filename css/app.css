@@ -14,11 +14,18 @@ body{
 }
 .header .project-name{
     position: absolute;
-    left:35%;
+    left:40%;
 }
 .header .home-btn{
     position: relative;
     left:85%;
+}
+.logo{
+    width: 100%;
+    text-align: center;
+}
+.logo img{
+    width: 30%;
 }
 .container{
     position: relative;

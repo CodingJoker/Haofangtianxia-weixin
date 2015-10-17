@@ -18,7 +18,14 @@ header.controller('headerCtrl',function($scope,$state,$rootScope){
 var homepage = angular.module('homepageModule', []);
 homepage.controller('homepageCtrl',  function($scope,$http,$state,$rootScope){
 	$scope.houses = [];
-	$http.post("data/homepage_house.json")
+	var num = {
+		'num': '4'
+	}
+	$http.post("/haofangtianxia-server/index.php/home/recommend", $.param(num), {
+		'headers': {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+	})
 		.success(function(response){
 			if(response.meta.code == 200)
 				$scope.houses = response.data.pictures;
@@ -40,7 +47,7 @@ homepage.controller('homepageCtrl',  function($scope,$http,$state,$rootScope){
 		else{
 			if(where == 'register')
 			{
-				$state.go(where,{'rec_visible':0,'house_id':0,'house_name':''});
+				$state.go(where,{'rec_visible':1,'house_id':0,'house_name':''});
 			}
 			else{
 				$state.go(where)
@@ -56,12 +63,18 @@ var selfinfo = angular.module('selfinfoModule', []);
 selfinfo.controller('selfinfoCtrl', function($rootScope,$scope,$http,$state,$stateParams){
 	$rootScope.backhide = false;
 	$rootScope.homepagehide = false;
-	var userId = $rootScope.phone_no;
-	$scope.name = '';
+	var userId = {
+		"phone_no" :$rootScope.phone_no
+	};
+	$scope.name = $rootScope.username;
 	$scope.bankname = '';
 	$scope.bankno = '';
 	$scope.recommend_num = 0;
-	$http.post('data/selfinfo.json',userId)
+	$http.post('/haofangtianxia-server/index.php/user/info',$.param(userId),{
+		'headers': {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+	})
 	.success(function(response){
 			if(response.meta.code == 200){
 				$scope.bankname = response.data.bank_name;
@@ -75,11 +88,27 @@ selfinfo.controller('selfinfoCtrl', function($rootScope,$scope,$http,$state,$sta
 		$scope.disctrl[num] = false;
 	}
 	$scope.checkSubmit = function(num){
+		var data = {
+			'bank_name':$scope.bankname,
+			'bank_no':$scope.bankno,
+			'phone_no': $rootScope.phone_no
+		}
 		$scope.disctrl[num] = true;
-		$.teninedialog({
-                    title:'系统提示',
-                    content:'修改成功'
-                });
+		$http.post('/haofangtianxia-server/index.php/user/modify',$.param(data),{
+			'headers': {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+		})
+		.success(function(response){
+			if(response.meta.code == 200){
+				$.teninedialog({
+		                    title:'系统提示',
+		                    content:'修改成功'
+		                });
+			}
+		})
+		
+		
 	}
 })
 var house = angular.module('houseModule', []);
@@ -88,7 +117,11 @@ house.controller('houseCtrl', function($rootScope,$scope,$http,$state,$statePara
 	$rootScope.homepagehide = false;
 	var houseId = $stateParams.houseId;
 	$scope.house = null;
-	$http.get('data/houseinfo.json',{'houseId':houseId})
+	$http.post('/haofangtianxia-server/index.php/house/detailinfo',$.param({'house_id':houseId}),{
+		'headers': {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+	})
 			.success(function(response){
 				if(response.meta.code == 200){
 					$scope.house = response.data;
@@ -110,11 +143,11 @@ house.controller('houseCtrl', function($rootScope,$scope,$http,$state,$statePara
 		}
 		else{
 			var data = {
-				'rec_visible':1,
+				'rec_visible':0,
 				'house_id':houseId,
 				'house_name':house.name
 			}
-			$state.go('register',data);
+			$state.go('recommend',data);
 		}
 	}
 })
