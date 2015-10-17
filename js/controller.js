@@ -86,6 +86,7 @@ var house = angular.module('houseModule', []);
 house.controller('houseCtrl', function($rootScope,$scope,$http,$state,$stateParams){
 	$rootScope.backhide = false;
 	$rootScope.homepagehide = false;
+	$rootScope.rec_housename='';
 	var houseId = $stateParams.houseId;
 	$scope.house = null;
 	$http.get('data/houseinfo.json',{'houseId':houseId})
@@ -114,6 +115,7 @@ house.controller('houseCtrl', function($rootScope,$scope,$http,$state,$statePara
 				'house_id':houseId,
 				'house_name':house.name
 			}
+			$rootScope.rec_housename=house.name;
 			$state.go('register',data);
 		}
 	}

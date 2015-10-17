@@ -102,7 +102,7 @@ regModule.controller('registerCtrl', function($scope, $http, $state, $cookieStor
 
 
 var recModule = angular.module('recommend_Module', []);
-recModule.controller('recommendCtrl', function($scope, $http, $state, $cookieStore, $rootScope, $state, $stateParams) {
+recModule.controller('recommendCtrl', function($scope, $http, $state, $cookieStore, $rootScope, $state,$stateParams) {
 
 	var visible = $stateParams.rec_visible;
 	var test = 1;
@@ -128,16 +128,14 @@ recModule.controller('recommendCtrl', function($scope, $http, $state, $cookieSto
 
 	}
 
-	if ($stateParams.house_name == undefined || $stateParams.house_name == null || $stateParams.house_name == '') {
-		$stateParams.house_name = {};
-
-	} else {
-		$scope.house_name = $stateParams.house_name;
-
-	}
-
-
-
+//	if ($stateParams.house_name == undefined || $stateParams.house_name == null || $stateParams.house_name == '') {
+//		$stateParams.house_name = {};
+//
+//	} else {
+//		$scope.house_name = $stateParams.house_name;
+//
+//	}
+    $scope.house_name=$rootScope.rec_housename;
 
 	$scope.recinfo = {
 			'name': '',
