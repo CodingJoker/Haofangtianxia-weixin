@@ -1,0 +1,21 @@
+.self-box{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.self-box div{
+	margin-top: 0.5em;
+} 
+.self-span-head{
+	border-radius: 5px 0 0 5px;
+	color:#fff;
+	background-color: #7DD4F4;
+}
+.self-span-end{
+	border-radius: 0 5px 5px 0;
+}
+.self-recommendno{
+	color: #A8A7A7;
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+}

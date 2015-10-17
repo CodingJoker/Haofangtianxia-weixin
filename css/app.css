@@ -1,0 +1,115 @@
+body{
+    font-family: '微软雅黑';
+    font-size:xx-small;
+}
+.header{
+    position: fixed;
+    background-color: #55B5FE;
+    width: 100%;
+    line-height: 2.5em;
+    height: 2.5em;
+    font-size: 1.75em;
+    color:#fff;
+    z-index: 999;
+}
+.header .project-name{
+    position: absolute;
+    left:35%;
+}
+.header .home-btn{
+    position: relative;
+    left:85%;
+}
+.container{
+    position: relative;
+    top:3.3em;
+    width: 100%;
+    margin:0;
+    margin-bottom: 4em;
+}
+.action{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 100%;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid #E3DFDF;
+}
+.action div{
+    margin:0;
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+}
+.action div span{
+    width: 80%;
+    display: inline-block;
+    height: 3em;
+    border-radius: 3.5em;
+    background-color:#B4B1B1;
+    opacity: 0.8;
+    color:#fff;
+    font-size: 1.5em;
+    line-height: 3em;
+}
+.house-box{
+    width: 100%;
+    padding:0;
+    margin:0;
+}
+.house-box .house{
+    margin-top: 1em;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-left:2px solid #B3B2B2;
+    border-top:2px solid #B3B2B2;
+    box-shadow: 6px 6px 6px #B3B2B2;
+}
+.house div{
+    display:inline-block;
+}
+.house .house-img{
+    width: 55%;
+    vertical-align: top;
+    padding:0.5em;
+}
+.house .house-img img{
+    width: 100%;
+}
+.house .house-info{
+    width: 40;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.house-info span{
+    display: block;
+}
+.house-info .house-name{
+    height: 2em;
+    line-height: 2em;
+    font-size: 1.4em;
+    font-weight: bold;
+    color:#6A6969;
+    white-space:nowrap; 
+    text-overflow:ellipsis; 
+    -o-text-overflow:ellipsis; 
+    overflow:hidden;
+}
+.house-info .house-place{
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    height: 2.6em;
+    line-height: 1.3em;
+    font-size: 1.1em;
+    color:#6A6969;
+/*    white-space:nowrap; 
+    text-overflow:ellipsis; 
+    -o-text-overflow:ellipsis; 
+    overflow:hidden;*/
+}
+.house-info .house-price{
+    height: 1.3em;
+    line-height: 1.3em;
+    font-size: 1.1em;
+    color: #d9534f;
+}

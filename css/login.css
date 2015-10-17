@@ -1,0 +1,43 @@
+.mobile_login{
+	margin-top: 0em;
+	overflow: auto;
+
+}
+.loginbutton{
+	width: 100%;
+	/*color: #000000;*/
+	/*background-color: #000000;*/
+	margin-top: 1em;
+	border-radius: 5%;
+}
+.logodiv{
+	text-align:center;
+	margin-bottom: 10%;
+}
+.logoimg{	
+	margin: 0 auto;
+}
+.loginname,.loginpassword{
+  padding-left: 0;
+   /*width: 80%;*/
+}
+.bottom_link{
+	margin-top: 1em;
+	font-size: 1.3em;
+}
+
+.loginlabel{
+	padding-left:0 ;
+	padding-right: 0;
+	font-family: "微软雅黑";
+    font-size: 1.35em;
+    font-weight: 200;
+   height: 34px;
+   line-height:34px;    
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+

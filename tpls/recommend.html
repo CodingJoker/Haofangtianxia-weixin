@@ -1,0 +1,84 @@
+<div class="mobile_recommend" ng-controller="recommendCtrl">
+	
+	
+	<div class="recommendmain">
+		<form>
+
+		<div class="form-group row">
+			<label class="control-label col-xs-2 reglabel" style="text-align: right;">
+				
+				<span class="glyphicon glyphicon-user recicon"></span>
+			</label>
+
+			<div class="col-xs-10 loginname">
+
+				<input type="text" class="form-control" ng-model="recinfo.name" placeholder="客户姓名">
+			</div>
+		</div>
+
+		<div class="form-group row">
+
+			<label class="control-label col-xs-2 reglabel" style="text-align: right;">
+
+               <span class="glyphicon glyphicon-earphone recicon"></span>
+			</label>
+
+			<div class="col-xs-10 loginpassword">
+				<input type="number" class="form-control hhhh" ng-model="recinfo.phone_no" placeholder="联系电话">
+			</div>
+		</div>
+		<div class="form-group row " ng-hide="rec_visible">
+			<label class="control-label col-xs-2 reglabel" style="text-align: right;">
+				
+				<span class="glyphicon glyphicon-home recicon"></span>
+			</label>
+			<div class="col-xs-10 loginname">
+
+				<input type="text" class="form-control" ng-model="house_name" placeholder="意向楼盘" readonly>
+			</div>
+		</div>
+		<div class="form-group row" ng-hide="rec_visible">
+			<label class="control-label col-xs-2 reglabel" style="text-align: right;">
+					<span class="glyphicon glyphicon-usd recicon"></span>
+			</label>
+			<div class="col-xs-10 loginname">
+
+				<input type="text" class="form-control" ng-model="recinfo.aim_price" placeholder="意向价格">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label class="control-label col-xs-2 reglabel" style="text-align: right;">
+				<span class="glyphicon glyphicon-send recicon"></span>
+
+			</label>
+			<div class="col-xs-10 loginname">
+
+				<textarea type="" class="form-control search-query" ng-model="recinfo.remark" placeholder="备注(可选)"></textarea>
+			</div>
+		</div>
+		
+		
+		<span id="">
+				提示：请务必提交真实的客户信心，若多次提交虚假信息，您的账号将会被暂停或终止。
+			</span>
+
+	</form>
+	</div>
+	
+	<div class="button_group row">
+		<div class="control-group col-xs-6">
+		<div class="">
+			<button class="btn btn-primary gobackbutton" ng-click="goback()">返回</button>
+
+		</div>
+	</div>
+	<div class="control-group col-xs-6">
+		<div class="">
+			<button class="btn btn-info confirmbutton" ng-click="confirm()">提交推荐</button>
+
+		</div>
+	</div>
+	</div>
+	
+	
+</div>

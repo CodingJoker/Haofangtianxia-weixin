@@ -1,0 +1,26 @@
+{
+	"meta":{
+		"code":200
+	},
+	"data":{
+		"pictures":[{
+		"house_id":"123",
+		"name":"太阳公元",
+		"thumb_pic":"image/test/详细说明-1.jpg",
+		"addr":"成都市一环路东一段",
+		"price":"30000.0"
+		},{
+		"house_id":"125",
+		"name":"太阳公元",
+		"thumb_pic":"image/test/详细说明-1.jpg",
+		"addr":"成都市一环路东一段",
+		"price":"30000.0"
+		},{
+		"house_id":"124",
+		"name":"太阳公元",
+		"thumb_pic":"image/test/详细说明-1.jpg",
+		"addr":"成都市一环路东一段",
+		"price":"30000.0"
+		}]
+	}
+}

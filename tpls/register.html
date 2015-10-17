@@ -1,0 +1,102 @@
+<div class="mobile_register container" ng-controller="registerCtrl">
+	<div class="registermain">
+
+		<form name="form" novalidate="novalidate">
+
+			<div class="form-group row">
+				<label class="control-label col-xs-2 reglabel" style="text-align: right;">
+					<!--<img src="image/96_4-1.png" />-->
+					<!--手机号码-->
+					<!--<i class="icono-iphoneBold"></i>-->
+					<span class="glyphicon glyphicon-phone regicon"></span>
+				</label>
+
+				<div class="col-xs-10 loginname">
+
+					<input type="number" class="form-control" ng-model="reginfo.phone_no" placeholder="手机号码">
+				</div>
+			</div>
+
+			<div class="form-group row">
+
+				<label class="control-label col-xs-2 reglabel" style="text-align: right;">
+					<!--密码-->
+					<!--<i class="icono-keyboard"></i>-->
+					<span class="glyphicon glyphicon-link regicon"></span>
+
+				</label>
+
+				<div class="col-xs-10 loginpassword">
+					<input type="password" class="form-control hhhh" ng-model="reginfo.passwd" placeholder="密码">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="control-label col-xs-2 reglabel" style="text-align: right;">
+
+					<!--<i class="icono-user"></i>-->
+					<span class="glyphicon glyphicon-user regicon"></span>
+				</label>
+				<div class="col-xs-10 loginname">
+
+					<input type="text" class="form-control" ng-model="reginfo.name" placeholder="姓名">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="control-label col-xs-2 reglabel" style="text-align: right;">
+
+					<!--<i class="icono-document"></i>-->
+					<span class="glyphicon glyphicon-home regicon"></span>
+				</label>
+				<div class="col-xs-10 loginname">
+
+					<input type="text" class="form-control" ng-model="reginfo.id_no" placeholder="身份证号">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="control-label col-xs-2 reglabel" style="text-align: right;">
+					<!--<img src="image/96_4-1.png" />-->
+					<!--开户行名称-->
+
+					<!--<i class="icono-tag"></i>-->
+
+					<span class="glyphicon glyphicon-inbox regicon"></span>
+
+				</label>
+				<div class="col-xs-10 loginname">
+
+					<input type="text" class="form-control search-query" ng-model="reginfo.bank_name" placeholder="银行卡开户行名称(可选)">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="control-label col-xs-2 reglabel" style="text-align: right;">
+					<!--<img src="image/96_4-1.png" />-->
+					<!--银行卡号-->
+					<span class="glyphicon glyphicon-credit-card regicon"></span>
+					<!--<i class="icono-creditCard"></i>-->
+				</label>
+				<div class="col-xs-10 loginname">
+
+					<input type="text" class="form-control search-query" ng-model="reginfo.bank_no" placeholder="银行卡号(可选)">
+				</div>
+			</div>
+			<!--<div class="form-group row">
+				<div class="col-xs-10 col-xs-offset-1 controls">
+					<label >
+						<input type="checkbox"> 我已阅读并同意活动细则里面的所有条款
+					</label>
+				</div>
+			</div>-->
+			<span id="">
+				注意：身份证号码是认定推荐人的唯一标识，为保障你的权益，请正确输入
+			</span>
+
+		</form>
+
+	</div>
+	<div class="control-group">
+		<div class="">
+			<button class="btn btn-info regbutton" ng-click="reg()">注册</button>
+
+		</div>
+	</div>
+</div>

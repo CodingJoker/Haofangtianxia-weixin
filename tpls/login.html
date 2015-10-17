@@ -1,0 +1,53 @@
+<div class="mobile_login container" ng-controller="loginCtrl">
+
+	<div class="logodiv">
+		<!--<img class="logoimg" src="http://hk.weibo.com/upload/supp/celebrityperson/0/0000/0980/1/p_1.jpg?11667"  />-->
+		<img width="65%" src="image/Logo.png" />
+	</div>
+
+	<div class="loginmain">
+		<div class="form-group row">
+			<label class="control-label col-xs-2 loginlabel" style="text-align: center;">
+				<!--<img src="image/96_4-1.png" />-->
+				账号
+			</label>
+			<div class="col-xs-10 loginname">
+
+				<input type="number" class="form-control" ng-model="logininfo.phone_no" placeholder="请输入你的手机号码">
+			</div>
+		</div>
+
+		<div class="form-group row">
+
+			<label class="control-label col-xs-2 loginlabel" style="text-align: center;">
+				密码
+			</label>
+
+			<div class="col-xs-10 loginpassword">
+				<input type="password" class="form-control hhhh" ng-model="logininfo.passwd" placeholder="请输入你的密码">
+			</div>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<div class="">
+			<button class="btn btn-info loginbutton" ng-click="login()">登录</button>
+
+		</div>
+	</div>
+
+	<div class="bottom_link col-sm-12 col-xs-12">
+		<div class="col-sm-6 col-xs-6 col-xs-offset-7">
+			<span id="">
+   		<a href="index.html#/register">点此注册</a>
+   	</span>
+		</div>
+		<!--<div class="col-sm-6 col-xs-6">
+			<span>
+   		<a>找回密码</a>
+   		</span>
+		</div>-->
+
+	</div>
+
+</div>

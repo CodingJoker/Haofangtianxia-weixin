@@ -1,0 +1,23 @@
+<div class="hou-house" ng-controller="houseCtrl">
+	<div class="house-imgs">
+		<img ng-src="{{house.thumb_pic}}" alt="">
+		<img ng-src="{{picture.pic}}" ng-repeat="picture in house.pictures" alt="">
+	</div>
+	<div class="hou-word">
+		<div class="hou-name">
+			楼盘：{{house.name}}
+		</div>
+		<div class="hou-addr">
+			地址：{{house.addr}}
+		</div>
+		<div class="hou-price">
+			价格：￥{{house.price}}/平米
+		</div>
+		<div class="hou-desc">
+		详细信息：{{house.description}}
+		</div>
+	</div>
+	<div class="hou-commendbtn">
+		<button class="btn btn-primary" ng-click="goRegister()">推荐楼盘</button>
+	</div>
+</div>

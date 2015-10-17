@@ -1,0 +1,22 @@
+.recommendmain{
+	margin-top: 3em;
+}
+..mobile_recommend {
+	
+	overflow: auto;
+	/*background-color: #EBEBEB;*/
+	
+	width: 100%;
+	padding-left: -10px;
+}
+.gobackbutton,.confirmbutton{
+	width: 100%;
+	border-radius: 5%;
+}
+.button_group{
+	margin-top: 1em;
+}
+.recicon{
+	color: #ADADAD;
+	font-size: 1.2em;
+}

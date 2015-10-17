@@ -1,0 +1,52 @@
+.hou-house{
+	width: 100%;
+}
+.hou-house .house-imgs{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.hou-house .house-imgs img{
+	width: 100%;
+}
+.hou-word{
+	width: 90%;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	background-color: #B5EDFC;
+	padding-top:1em;
+	padding-bottom: 1em;
+	border-radius: 5px;
+}
+.hou-word div{
+	margin-bottom: 0.5em;
+}
+.hou-name{
+	color:#2D8AAC;
+	font-size: 2em;
+	font-weight: bold;
+}
+.hou-addr{
+	color:#fff;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.hou-price{
+	color:#fff;
+	font-weight: bold;
+}
+.hou-desc{
+	color:#fff;
+	font-weight: bold;
+}
+.hou-commendbtn{
+	width: 100%;
+}
+.hou-commendbtn button{
+	width: 100%;
+	border-radius: 5px;
+}

@@ -1,0 +1,19 @@
+{
+    "meta": {
+        "code": "200"
+    },
+    "data": {
+        "name": "太阳公园",
+        "thumb_pic": "image/homepage/轮播图片/s1.jpg",
+        "addr": "成都市一环路东一段",
+        "price": "30000.0",
+        "description": "描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述",
+        "pictures": [{
+            "pic": "image/homepage/轮播图片/s3.jpg"
+        }, {
+            "pic": "image/homepage/轮播图片/s2.jpg"
+        }, {
+            "pic": "image/homepage/轮播图片/s1.jpg"
+        }]
+    }
+}

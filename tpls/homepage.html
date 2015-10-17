@@ -1,0 +1,43 @@
+<div ng-controller="homepageCtrl">
+  <div class="logo">
+      <img src="" alt="品牌logo">
+  </div>
+  <script type="text/javascript">
+  $(function(){
+      $(".flexslider").flexslider({
+          slideshowSpeed: 4000, //展示时间间隔ms
+          animationSpeed: 400, //滚动时间ms
+          touch: true //是否支持触屏滑动
+      });
+  });
+  </script>
+  <div class="flexslider">
+      <ul class="slides">
+          <li><img src="image/homepage/轮播图片/s1.jpg" /></li>
+          <li><img src="image/homepage/轮播图片/s2.jpg" /></li>
+          <li><img src="image/homepage/轮播图片/s3.jpg" /></li>
+          <li><img src="image/homepage/轮播图片/s4.jpg" /></li>
+      </ul>
+  </div>
+  <div class="action">
+      <div class="recommend">
+          <span ng-click="go('register')">推荐</span>
+      </div>
+      <div class="selfinfo">
+          <span ng-click="go('selfinfo')">个人信息</span>
+      </div>
+  </div>
+  <div class="house-box ">
+      <div class="house " ng-repeat="house in houses" ng-click="gohouse(house.house_id)">
+          <div class="house-img">
+              <img ng-src="{{house.thumb_pic}}" alt="房屋图片">
+          </div>
+          <div class="house-info ">
+              <span class="house-name">{{house.name}}</span>
+              <span class="house-place">{{house.addr}}</span>
+              <span class="house-price">￥{{house.price}}/平米</span>
+          </div>
+      </div>
+  </div>
+
+</div>
