@@ -20,6 +20,7 @@ loModule.controller('loginCtrl', function($scope, $http, $state, $cookieStore, $
 
 					//登录成功后存储rootScope
 					$rootScope.phone_no = $scope.logininfo.phone_no;
+					$rootScope.username = response.data.name;
 					$state.go('index');
 
 
@@ -63,7 +64,7 @@ regModule.controller('registerCtrl', function($scope, $http, $state, $cookieStor
 
 		} else {
 			//如果还没登录，就可以注册
-			
+
 			console.log($scope.reginfo)
 			$http.post("/haofangtianxia-server/index.php/user/register", $.param($scope.reginfo), {
 					'headers': {
@@ -82,7 +83,7 @@ regModule.controller('registerCtrl', function($scope, $http, $state, $cookieStor
 						// $state.go('index');
 
 					} else {
-						
+
 
 						$.teninedialog({
 							title: '系统提示',
@@ -101,30 +102,61 @@ regModule.controller('registerCtrl', function($scope, $http, $state, $cookieStor
 
 
 var recModule = angular.module('recommend_Module', []);
-recModule.controller('recommendCtrl', function($scope, $http, $state, $cookieStore, $rootScope) {
+recModule.controller('recommendCtrl', function($scope, $http, $state, $cookieStore, $rootScope, $state, $stateParams) {
 
-	$scope.rec_visible=$stateParams.rec_visible;
-	$scope.house_id=$stateParams.house_id;
-	$scope.house_name=$stateParams.house_name;
-	
-	
+	var visible = $stateParams.rec_visible;
+	var test = 1;
 
-    $scope.recinfo = {
-		'name': '',
-		'aim_house_id':''',
-		'phone_no':'',
-		'aim_price':'',
-		'remark':'',
+	$scope.rec_visible = function() {
+
+		if (visible === null || visible === undefined || visible == '') {
+
+			return true;
+
+		} else {
+
+			return false;
+
+		}
 	}
-	//接收传过来的值
+
+	if ($stateParams.house_id == undefined || $stateParams.house_id == null || $stateParams.house_id == '') {
+		$scope.house_id = {};
+
+	} else {
+		$scope.house_id = $stateParams.house_id;
+
+	}
+
+	if ($stateParams.house_name == undefined || $stateParams.house_name == null || $stateParams.house_name == '') {
+		$stateParams.house_name = {};
+
+	} else {
+		$scope.house_name = $stateParams.house_name;
+
+	}
+
+
+
+
+	$scope.recinfo = {
+			'name': '',
+			'aim_house_id': $scope.house_id,
+			'phone_no': '',
+			'aim_price': '',
+			'remark': '',
+			'phone_no_user': $rootScope.phone_no,
+			'type': '1'
+		}
+		//接收传过来的值
 
 	$scope.confirm = function() {
 
-		$http.get("data/recommend.json",$.param($scope.recinfo),{
-					'headers': {
-						'Content-Type': 'application/x-www-form-urlencoded'
-					}
-				})
+		$http.post("/haofangtianxia-server/index.php/user/recommend", $.param($scope.recinfo), {
+				'headers': {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+			})
 			.success(function(response) {
 				if (response.meta.code == 200) {
 
@@ -143,7 +175,7 @@ recModule.controller('recommendCtrl', function($scope, $http, $state, $cookieSto
 				} else {
 					$.teninedialog({
 						title: '系统提示',
-						content: response.meta.description
+						content: "提交推荐失败"
 					});
 
 				}
