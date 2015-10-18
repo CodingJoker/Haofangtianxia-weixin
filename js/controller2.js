@@ -105,11 +105,11 @@ var recModule = angular.module('recommend_Module', []);
 recModule.controller('recommendCtrl', function($scope, $http, $state, $cookieStore, $rootScope, $state,$stateParams) {
 
 	var visible = $stateParams.rec_visible;
-	var test = 1;
+	
 
 	$scope.rec_visible = function() {
 
-		if (visible === null || visible === undefined || visible == '') {
+		if (visible === null || visible === undefined || visible == ''|| visible==1) {
 
 			return true;
 
@@ -136,7 +136,7 @@ recModule.controller('recommendCtrl', function($scope, $http, $state, $cookieSto
 //
 //	}
     $scope.house_name=$rootScope.rec_housename;
-
+    console.log($rootScope.rec_housename);
 	$scope.recinfo = {
 			'name': '',
 			'aim_house_id': $scope.house_id,

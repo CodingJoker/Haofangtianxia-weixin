@@ -45,7 +45,7 @@ homepage.controller('homepageCtrl',  function($scope,$http,$state,$rootScope){
                 });
 		}
 		else{
-			if(where == 'register')
+			if(where == 'recommend')
 			{
 				$state.go(where,{'rec_visible':1,'house_id':0,'house_name':''});
 			}
@@ -145,11 +145,10 @@ house.controller('houseCtrl', function($rootScope,$scope,$http,$state,$statePara
 		else{
 			var data = {
 				'rec_visible':0,
-				'house_id':houseId,
-				'house_name':house.name
+				'house_id':houseId
 			}
 
-			$rootScope.rec_housename=house.name;
+			$rootScope.rec_housename=$scope.house.name;
 
 			$state.go('recommend',data);
 

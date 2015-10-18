@@ -28,7 +28,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 			templateUrl: 'tpls/register.html'
 		})
 		.state('recommend', {
-			url: '/recommend/:rec_visible/:house_id/:house_name',
+			url: '/recommend/:rec_visible/:house_id',
 			templateUrl: 'tpls/recommend.html'
 		})
 		.state('house',{
