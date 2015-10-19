@@ -24,8 +24,11 @@
 .bottom_link{
 	margin-top: 1em;
 	font-size: 1.3em;
+	
 }
-
+.regsister{
+	text-align: right;
+}
 .loginlabel{
 	padding-left:0 ;
 	padding-right: 0;
