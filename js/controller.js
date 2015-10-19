@@ -47,7 +47,7 @@ homepage.controller('homepageCtrl',  function($scope,$http,$state,$rootScope){
 		else{
 			if(where == 'recommend')
 			{
-				$state.go(where,{'rec_visible':1,'house_id':0,'house_name':''});
+				$state.go(where,{'rec_visible':1,'house_id':0});
 			}
 			else{
 				$state.go(where)

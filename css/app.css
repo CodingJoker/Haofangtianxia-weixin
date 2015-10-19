@@ -29,9 +29,8 @@ body{
 }
 .container{
     position: relative;
-    top:3.3em;
+    top:4.3em;
     width: 100%;
-    margin:0;
     margin-bottom: 4em;
 }
 .action{
@@ -119,4 +118,7 @@ body{
     line-height: 1.3em;
     font-size: 1.1em;
     color: #d9534f;
+}
+.footer{
+    min-height: 2em;
 }

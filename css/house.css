@@ -1,5 +1,6 @@
 .hou-house{
 	width: 100%;
+	margin-top: 1em;
 }
 .hou-house .house-imgs{
 	width: 100%;
@@ -37,10 +38,12 @@
 }
 .hou-price{
 	color:#fff;
+	font-size: 1.5em;	
 	font-weight: bold;
 }
 .hou-desc{
 	color:#fff;
+	font-size: 1.5em;
 	font-weight: bold;
 }
 .hou-commendbtn{
