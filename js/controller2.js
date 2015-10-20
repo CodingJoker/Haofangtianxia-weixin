@@ -5,7 +5,8 @@ loModule.controller('loginCtrl', function($scope, $http, $state, $cookieStore, $
 		'phone_no': '',
 		'passwd': ''
 	}
-	$rootScope.phone_no = {}
+	$rootScope.phone_no = null;
+	console.log($rootScope.phone_no)
 		//点击登录发送用户名和密码
 	$scope.login = function() {
 		console.log($scope.logininfo)
@@ -51,10 +52,10 @@ regModule.controller('registerCtrl', function($scope, $http, $state, $cookieStor
 		'bank_name': '',
 		'bank_no': '',
 	}
-
-	//点击注册发送用户注册信息
+	console.log($rootScope.phone_no)
+		//点击注册发送用户注册信息
 	$scope.reg = function() {
-		if ($rootScope.phone_no != null && $rootScope.phone_no != undefined) {
+		if ($rootScope.phone_no != null) {
 			//如果已经登陆了，不允许注册
 			$.teninedialog({
 				title: '系统提示',
@@ -80,7 +81,9 @@ regModule.controller('registerCtrl', function($scope, $http, $state, $cookieStor
 						});
 
 						//          成功后自动登录并跳转到首页 
-						// $state.go('index');
+						$rootScope.phone_no = $scope.reginfo.phone_no;
+						$rootScope.username = $scope.reginfo.name;
+						$state.go('index');
 
 					} else {
 
@@ -102,14 +105,14 @@ regModule.controller('registerCtrl', function($scope, $http, $state, $cookieStor
 
 
 var recModule = angular.module('recommend_Module', []);
-recModule.controller('recommendCtrl', function($scope, $http, $state, $cookieStore, $rootScope, $state,$stateParams) {
+recModule.controller('recommendCtrl', function($scope, $http, $state, $cookieStore, $rootScope, $state, $stateParams) {
 
 	var visible = $stateParams.rec_visible;
-	
+
 
 	$scope.rec_visible = function() {
 
-		if (visible === null || visible === undefined || visible == ''|| visible==1) {
+		if (visible === null || visible === undefined || visible == '' || visible == 1) {
 
 			return true;
 
@@ -128,15 +131,15 @@ recModule.controller('recommendCtrl', function($scope, $http, $state, $cookieSto
 
 	}
 
-//	if ($stateParams.house_name == undefined || $stateParams.house_name == null || $stateParams.house_name == '') {
-//		$stateParams.house_name = {};
-//
-//	} else {
-//		$scope.house_name = $stateParams.house_name;
-//
-//	}
-    $scope.house_name=$rootScope.rec_housename;
-    console.log($rootScope.rec_housename);
+	//	if ($stateParams.house_name == undefined || $stateParams.house_name == null || $stateParams.house_name == '') {
+	//		$stateParams.house_name = {};
+	//
+	//	} else {
+	//		$scope.house_name = $stateParams.house_name;
+	//
+	//	}
+	$scope.house_name = $rootScope.rec_housename;
+	console.log($rootScope.rec_housename);
 	$scope.recinfo = {
 			'name': '',
 			'aim_house_id': $scope.house_id,
