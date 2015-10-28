@@ -2,29 +2,38 @@
   <div class="logo">
       <img src="image/Logo.png" alt="品牌logo">
   </div>
-  <script type="text/javascript">
-  $(function(){
-      $(".flexslider").flexslider({
-          slideshowSpeed: 4000, //展示时间间隔ms
-          animationSpeed: 400, //滚动时间ms
-          touch: true //是否支持触屏滑动
-      });
+  <div class="flicker-example" data-block-text="false" data-auto-flick-delay="3">
+    <ul>
+      <li data-background="image/homepage/轮播图片/s1.jpg">
+       <!--  <div class="flick-title">Flickerplate Is Working</div>
+        <div class="flick-sub-text">Heaven forbid this package you downloaded is broken. That wouldn't be embarrassing at all.</div> -->
+      </li>
+      <li data-background="image/homepage/轮播图片/s2.jpg">
+       <!--  <div class="flick-title">Editable via Javascript or CSS</div>
+        <div class="flick-sub-text">Take a look at the extensive documentation to see how you can change the settings in multiple ways.</div> -->
+      </li>
+      <li data-background="image/homepage/轮播图片/s3.jpg">
+        <!-- <div class="flick-title">Touch Enabled Through the jQuery Finger Library</div>
+        <div class="flick-sub-text">jQuery Finger is a great touch library that has been included as part of the Flickerplate package.</div> -->
+      </li>
+      <li data-background="image/homepage/轮播图片/s4.jpg">
+        <!-- <div class="flick-title">Touch Enabled Through the jQuery Finger Library</div>
+        <div class="flick-sub-text">jQuery Finger is a great touch library that has been included as part of the Flickerplate package.</div> -->
+      </li>
+    </ul>
+  </div>
+  <script>
+  $(document).ready(function(){
+    
+    $('.flicker-example').flicker();
   });
   </script>
-  <div class="flexslider">
-      <ul class="slides">
-          <li><img src="image/homepage/轮播图片/s1.jpg" /></li>
-          <li><img src="image/homepage/轮播图片/s2.jpg" /></li>
-          <li><img src="image/homepage/轮播图片/s3.jpg" /></li>
-          <li><img src="image/homepage/轮播图片/s4.jpg" /></li>
-      </ul>
-  </div>
   <div class="action">
       <div class="recommend">
-          <span ng-click="go('recommend')">推荐</span>
+          <span ng-click="go('recommend')"><img src="image/homepage/hand.png" >推荐</span>
       </div>
       <div class="selfinfo">
-          <span ng-click="go('selfinfo')">个人信息</span>
+          <span ng-click="go('selfinfo')"><img src="image/homepage/person.png" >个人信息</span>
       </div>
   </div>
   <div class="house-box ">
@@ -35,7 +44,7 @@
           <div class="house-info ">
               <span class="house-name">{{house.name}}</span>
               <span class="house-place">{{house.addr}}</span>
-              <span class="house-price">￥{{house.price}}/平米</span>
+              <span class="house-price">￥<span class="house-pricenum">{{house.price}}</span>/平米</span>
           </div>
       </div>
   </div>

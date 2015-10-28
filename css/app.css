@@ -33,6 +33,9 @@ body{
     width: 100%;
     margin-bottom: 4em;
 }
+.container .flicker-example{
+    height: 20em;
+}
 .action{
     margin-top: 2em;
     margin-bottom: 2em;
@@ -44,6 +47,7 @@ body{
     margin:0;
     display: inline-block;
     width: 49%;
+    height: inherit;
     text-align: center;
 }
 .action div span{
@@ -51,11 +55,30 @@ body{
     display: inline-block;
     height: 3em;
     border-radius: 3.5em;
-    background-color:#B4B1B1;
+    background-color:#5bc0de;
     opacity: 0.8;
     color:#fff;
     font-size: 1.5em;
     line-height: 3em;
+}
+.action .recommend {
+    letter-spacing: 1em;
+}
+.action .recommend img{
+    display: inline-block;
+    float: left;
+    margin-left:1em;
+    margin-top: 0.5em;
+    width: 2em;
+}
+.action .selfinfo img{
+    display: inline-block;
+    float: left;
+    margin-left:1em;
+    margin-top: 0.5em;
+    margin-right: -1.5em;
+    width: 2em;
+    
 }
 .house-box{
     width: 100%;
@@ -63,12 +86,11 @@ body{
     margin:0;
 }
 .house-box .house{
+    font-family: '幼圆';
     margin-top: 1em;
     margin-left: 5%;
     margin-right: 5%;
-    border-left:2px solid #B3B2B2;
-    border-top:2px solid #B3B2B2;
-    box-shadow: 6px 6px 6px #B3B2B2;
+    box-shadow: 1px 1px 1px 1px #B3B2B2;
 }
 .house div{
     display:inline-block;
@@ -93,9 +115,9 @@ body{
 .house-info .house-name{
     height: 2em;
     line-height: 2em;
-    font-size: 1.4em;
+    font-size: 2em;
     font-weight: bold;
-    color:#6A6969;
+    color:#908F8F;
     white-space:nowrap; 
     text-overflow:ellipsis; 
     -o-text-overflow:ellipsis; 
@@ -114,10 +136,16 @@ body{
     overflow:hidden;*/
 }
 .house-info .house-price{
+    display: inline;
     height: 1.3em;
     line-height: 1.3em;
-    font-size: 1.1em;
+    font-size: 1.5em;
     color: #d9534f;
+}
+.house-price .house-pricenum{
+    display: inline;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 .footer{
     min-height: 2em;
