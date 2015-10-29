@@ -70,7 +70,8 @@ selfinfo.controller('selfinfoCtrl', function($rootScope,$scope,$http,$state,$sta
 	$scope.bankname = '';
 	$scope.bankno = '';
 	$scope.recommend_num = 0;
-	$http.post('/haofangtianxia-server/index.php/user/info',$.param(userId),{
+	$scope.recomUser = [];
+	$http.post('/haofangtianxia-server/index.php?/user/info',$.param(userId),{
 		'headers': {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				}
@@ -80,9 +81,21 @@ selfinfo.controller('selfinfoCtrl', function($rootScope,$scope,$http,$state,$sta
 				$scope.bankname = response.data.bank_name;
 				$scope.bankno = response.data.bank_no;
 				$scope.id_no = response.data.id_no;
-				$scope.recommend_num = response.data.recommend_no;
 			}
+	});
+	$http.post("/haofangtianxia-server/index.php?/Recommend/user", $.param({'phone':userId}),{
+		'headers': {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
 	})
+		.success(function(response){
+			if(response.meta.code == 200){
+				if(response.meta.status == 101){
+					$scope.recomUser = response.data;
+					$scope.recommend_num = response.data.length;
+				}
+			}
+		})
 	$scope.disctrl = new Array(true,true,true,true);
 	$scope.edit = function(num){
 		$scope.disctrl[num] = false;
@@ -108,7 +121,7 @@ selfinfo.controller('selfinfoCtrl', function($rootScope,$scope,$http,$state,$sta
 			}
 		})
 		
-		
+	
 	}
 })
 var house = angular.module('houseModule', []);

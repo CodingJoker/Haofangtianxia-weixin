@@ -1,38 +1,59 @@
-<div class="self-box" ng-controller="selfinfoCtrl">
-	<div class="self-name input-group">
-		<span class="input-group-addon self-span-head">姓名</span>
-		<input type="text" ng-model='name' class="form-control"  ng-disabled="disctrl[0]">
-	</div>
-	<div class="self-backno input-group">
-		<span class="input-group-addon self-span-head">证件号</span>
-		<input type="text" class="form-control" ng-model="id_no" ng-disabled="disctrl[3]">
-	</div>
+<div ng-controller="selfinfoCtrl">
+	<div class="self-box" >
+		<div class="self-name input-group">
+			<span class="input-group-addon self-span-head">姓名</span>
+			<input type="text" ng-model='name' class="form-control"  ng-disabled="disctrl[0]">
+		</div>
+		<div class="self-backno input-group">
+			<span class="input-group-addon self-span-head">证件号</span>
+			<input type="text" class="form-control" ng-model="id_no" ng-disabled="disctrl[3]">
+		</div>
 
-	<div class="self-back input-group">
-		<span class="input-group-addon self-span-head">银行</span>
-		<input type="text" class="form-control" ng-model="bankname" ng-disabled="disctrl[1]">
-		<span class="input-group-btn" ng-show="disctrl[1]">
-		<button class ="btn btn-info self-span-end" type="button" ng-click="edit(1)"><span class="glyphicon glyphicon-edit "></span></button>
-      </span>
-      <span class="input-group-btn" ng-hide="disctrl[1]">
-        	<button class="btn btn-info self-span-end" type="button" ng-click="checkSubmit(1)">确认修改</button>
-      	</span>
-	</div>
-	<div class="self-backno input-group">
-		<span class="input-group-addon self-span-head">卡号</span>
-		<input type="text" class="form-control" ng-model="bankno" ng-disabled="disctrl[2]">
-		<span class="input-group-btn" ng-show="disctrl[2]">
-        <button class="btn btn-info self-span-end" type="button" ng-click="edit(2)"><span class="glyphicon glyphicon-edit "></span></button>
-      </span>
-      <span class="input-group-btn" ng-hide="disctrl[2]">
-        	<button class="btn btn-info self-span-end" type="button" ng-click="checkSubmit(2)">确认修改</button>
-      	</span>
-	</div>
-	
-	<div class="self-recommendno">
-		推荐人数：{{recommend_num}}人
-	</div>
-	<div class="self-commend-house">
+		<div class="self-back input-group">
+			<span class="input-group-addon self-span-head">银行</span>
+			<input type="text" class="form-control" ng-model="bankname" ng-disabled="disctrl[1]">
+			<span class="input-group-btn" ng-show="disctrl[1]">
+			<button class ="btn btn-info self-span-end" type="button" ng-click="edit(1)"><span class="glyphicon glyphicon-edit "></span></button>
+	      </span>
+	      <span class="input-group-btn" ng-hide="disctrl[1]">
+	        	<button class="btn btn-info self-span-end" type="button" ng-click="checkSubmit(1)">确认修改</button>
+	      	</span>
+		</div>
+		<div class="self-backno input-group">
+			<span class="input-group-addon self-span-head">卡号</span>
+			<input type="text" class="form-control" ng-model="bankno" ng-disabled="disctrl[2]">
+			<span class="input-group-btn" ng-show="disctrl[2]">
+	        <button class="btn btn-info self-span-end" type="button" ng-click="edit(2)"><span class="glyphicon glyphicon-edit "></span></button>
+	      </span>
+	      <span class="input-group-btn" ng-hide="disctrl[2]">
+	        	<button class="btn btn-info self-span-end" type="button" ng-click="checkSubmit(2)">确认修改</button>
+	      	</span>
+		</div>
 		
+	</div>
+	<div class="self-combox">
+			<div class="self-comHeader" >
+				已推荐人信息({{recommend_num}})
+			</div>
+			<div class="self-comBody" ng-repeat="user in recomUser" ng-show="recommend_num">
+				<div class="self-comName">
+					<span class="self-comSpan">推荐人姓名：{{user.RecommendedName}}</span>
+				</div>
+				<div class="self-comPhone">
+					<span class="self-comSpan">推荐人电话：{{user.RecommendedPhone}}</span>
+				</div>
+				<div class="self-comHouse" ng-show="user.HouseName">
+					<span class="self-comSpan">推荐房屋：{{user.HouseName}}</span>
+				</div>
+				<div class="self-comIntPrice" ng-show="user.IntentionPrice">
+					<span class="self-comSpan">意向价格：{{user.IntentionPrice}}</span>
+				</div>
+				<div class="self-comRemark">
+					<span class="self-comSpan">备注：</span><span ng-show="user.Remarks">{{user.Remarks}}</span><span ng-hide="user.Remarks">暂无</span>
+				</div>
+			</div>
+			<div class="self-alert" ng-hide="recommend_num">
+				暂无相关推荐
+			</div>
 	</div>
 </div>
