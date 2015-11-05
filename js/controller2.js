@@ -43,7 +43,6 @@ loModule.controller('loginCtrl', function($scope, $http, $state, $cookieStore, $
 //注册
 var regModule = angular.module('register_Module', []);
 regModule.controller('registerCtrl', function($scope, $http, $state, $cookieStore, $rootScope) {
-
 	$scope.reginfo = {
 		'phone_no': '',
 		'passwd': '',
@@ -106,7 +105,8 @@ regModule.controller('registerCtrl', function($scope, $http, $state, $cookieStor
 
 var recModule = angular.module('recommend_Module', []);
 recModule.controller('recommendCtrl', function($scope, $http, $state, $cookieStore, $rootScope, $state, $stateParams) {
-
+	$rootScope.backhide = false;
+	$rootScope.homepagehide = false;
 	var visible = $stateParams.rec_visible;
 
 

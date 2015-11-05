@@ -1,7 +1,4 @@
 <div ng-controller="homepageCtrl">
-  <div class="logo">
-      <img src="image/Logo.png" alt="品牌logo">
-  </div>
   <div class="flicker-example" data-block-text="false" data-auto-flick-delay="3">
     <ul>
       <li data-background="image/homepage/轮播图片/s1.jpg">
@@ -24,10 +21,12 @@
   </div>
   <script>
   $(document).ready(function(){
-    
     $('.flicker-example').flicker();
   });
   </script>
+
+  <div class="special-tag">特色业务</div>
+
   <div class="action">
       <div class="recommend">
           <span ng-click="go('recommend')"><img src="image/homepage/hand.png" >推荐</span>
@@ -36,6 +35,7 @@
           <span ng-click="go('selfinfo')"><img src="image/homepage/person.png" >个人信息</span>
       </div>
   </div>
+  <div class="special-tag">好房推荐</div>
   <div class="house-box ">
       <div class="house " ng-repeat="house in houses" ng-click="gohouse(house.house_id)">
           <div class="house-img">
@@ -44,9 +44,17 @@
           <div class="house-info ">
               <span class="house-name">{{house.name}}</span>
               <span class="house-place">{{house.addr}}</span>
-              <span class="house-price">￥<span class="house-pricenum">{{house.price}}</span>/平米</span>
+              <span class="house-price"><span class="house-pricenum">{{house.price}}</span>/m<sup>2</sup></span>
           </div>
       </div>
   </div>
-
+  <div class="special-tag">联系我们</div>
+  <div class="footer">
+      <div class="logo">
+          <img src="image/Logo.png" alt="品牌logo">
+      </div>
+      <div class="contact-phone">
+        联系方式：028-12345678
+      </div>
+  </div>
 </div>

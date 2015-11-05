@@ -20,13 +20,7 @@ body{
     position: relative;
     left:85%;
 }
-.logo{
-    width: 100%;
-    text-align: center;
-}
-.logo img{
-    width: 30%;
-}
+
 .container{
     position: relative;
     top:4.3em;
@@ -34,7 +28,17 @@ body{
     margin-bottom: 4em;
 }
 .container .flicker-example{
+    margin-top:-1em;
     height: 20em;
+    margin-left: -5%;
+    width: 109%;
+}
+.special-tag{
+    margin: 1em;
+    font-family:'幼圆';
+    font-size: 2em;
+    padding-left: 0.5em;
+    border-left: 5px solid #FC8450;
 }
 .action{
     margin-top: 2em;
@@ -42,43 +46,27 @@ body{
     width: 100%;
     padding-bottom: 1.5em;
     border-bottom: 1px solid #E3DFDF;
+    font-family: '幼圆';
+    font-size: 2em;
+    color:#B9B4B4;
 }
 .action div{
     margin:0;
+    padding: 0;
     display: inline-block;
-    width: 49%;
-    height: inherit;
-    text-align: center;
+    text-align: center; 
 }
-.action div span{
-    width: 80%;
-    display: inline-block;
-    height: 3em;
-    border-radius: 3.5em;
-    background-color:#5bc0de;
-    opacity: 0.8;
-    color:#fff;
-    font-size: 1.5em;
-    line-height: 3em;
+.action .recommend{
+    width: 45%;
+    border-right: 1px solid #E3DFDF;
+    letter-spacing: 0.5em
 }
-.action .recommend {
-    letter-spacing: 1em;
+.action .selfinfo{
+    margin-right: 0.5em;
 }
-.action .recommend img{
-    display: inline-block;
-    float: left;
-    margin-left:1em;
-    margin-top: 0.5em;
-    width: 2em;
-}
-.action .selfinfo img{
-    display: inline-block;
-    float: left;
-    margin-left:1em;
-    margin-top: 0.5em;
-    margin-right: -1.5em;
-    width: 2em;
-    
+.action img{
+    width: 1.5em;
+    margin-right: 0.5em;
 }
 .house-box{
     width: 100%;
@@ -88,15 +76,15 @@ body{
 .house-box .house{
     font-family: '幼圆';
     margin-top: 1em;
-    margin-left: 5%;
-    margin-right: 5%;
-    box-shadow: 1px 1px 1px 1px #B3B2B2;
+    margin-left: 3%;
+    margin-right: 3%;
+    border-bottom: 1px solid #C7C4C4;
 }
 .house div{
     display:inline-block;
 }
 .house .house-img{
-    width: 55%;
+    width: 25%;
     vertical-align: top;
     padding:0.5em;
 }
@@ -104,7 +92,7 @@ body{
     width: 100%;
 }
 .house .house-info{
-    width: 40;
+    width: 70%;
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
@@ -124,29 +112,46 @@ body{
     overflow:hidden;
 }
 .house-info .house-place{
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
-    height: 2.6em;
-    line-height: 1.3em;
-    font-size: 1.1em;
+    display: inline-block;
+    width: 45%;
+/*    vertical-align: bottom;*/
+    font-size: 0.1em;
     color:#6A6969;
-/*    white-space:nowrap; 
+    white-space:nowrap; 
     text-overflow:ellipsis; 
     -o-text-overflow:ellipsis; 
-    overflow:hidden;*/
+    overflow:hidden;
 }
 .house-info .house-price{
-    display: inline;
-    height: 1.3em;
-    line-height: 1.3em;
-    font-size: 1.5em;
-    color: #d9534f;
+    display: inline-block;
+    text-align: right;
+    width: 50%;
+    font-size: 2em;
+    color: #FF8663;
+    vertical-align: bottom;
+    white-space:nowrap; 
+    text-overflow:ellipsis; 
+    -o-text-overflow:ellipsis; 
+    overflow:hidden;
 }
 .house-price .house-pricenum{
     display: inline;
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: bold;
+    vertical-align: bottom;
 }
+
 .footer{
     min-height: 2em;
+    text-align: center;
+}
+.logo{
+    width: 100%;
+}
+.logo img{
+    width: 60%;
+}
+.contact-phone{
+    font-family: '幼圆';
+    font-size: 2em;
 }
