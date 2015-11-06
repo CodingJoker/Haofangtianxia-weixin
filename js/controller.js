@@ -57,6 +57,26 @@ homepage.controller('homepageCtrl',  function($scope,$http,$state,$rootScope){
 	$scope.gohouse = function(id){
 		$state.go('house',{'houseId':id});
 	}
+	$scope.one_recommend = function(id,name){
+		if($rootScope.phone_no == null)
+		{
+			 $.teninedialog({
+                    title:'系统提示',
+                    content:'请先登录',
+                    otherButtons:["去登录"],
+                    otherButtonStyles:['btn-primary'],
+                     clickButton:function(sender,modal,index){
+                        $(this).closeDialog(modal);
+                        location.href = 'index.html#/login'
+                    }
+                });
+		}
+		else{
+			$state.go('recommend',{'rec_visible':0,'house_id':id});
+			$rootScope.rec_housename = name;
+		}
+		
+	}
 })
 
 var selfinfo = angular.module('selfinfoModule', []);

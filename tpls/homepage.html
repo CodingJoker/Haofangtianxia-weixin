@@ -37,14 +37,18 @@
   </div>
   <div class="special-tag">好房推荐</div>
   <div class="house-box ">
-      <div class="house " ng-repeat="house in houses" ng-click="gohouse(house.house_id)">
+      <div class="house " ng-repeat="house in houses" >
           <div class="house-img">
               <img ng-src="{{house.thumb_pic}}" alt="房屋图片">
           </div>
           <div class="house-info ">
-              <span class="house-name">{{house.name}}</span>
-              <span class="house-place">{{house.addr}}</span>
-              <span class="house-price"><span class="house-pricenum">{{house.price}}</span>/m<sup>2</sup></span>
+              <div class="house-name">{{house.name}}</div>
+              <div class="house-place">{{house.addr}}</div>
+              <div class="house-btn">
+                <div class="watch" ng-click="gohouse(house.house_id)">全景看房</div>
+                <div class="rechouse" ng-click="one_recommend(house.house_id,house.name)">一键推荐</div>
+              </div>
+              <!-- <span class="house-price"><span class="house-pricenum">{{house.price}}</span>/m<sup>2</sup></span> -->
           </div>
       </div>
   </div>
